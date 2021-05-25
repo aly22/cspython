@@ -1,0 +1,12 @@
+A="All"
+w="work"
+an="and"
+n="no"
+p="play"
+m="makes"
+J="Jack"
+a="a"
+d="dull"
+b="boy."
+print(A,w,an,n,p,m,J,a,d,b)
+print(6*(1-2))
