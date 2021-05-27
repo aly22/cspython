@@ -124,3 +124,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 week1/celsius_to_farenheit.py
+week1/minta_loop_ellenőrzésére.py
