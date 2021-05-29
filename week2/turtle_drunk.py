@@ -14,3 +14,4 @@ for i in lst:
 print(numba)
 print(t.heading())
 wn.exitonclick()
+
