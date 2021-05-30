@@ -14,8 +14,34 @@ for wrd in wrd_lst:
     if wrd in stopwords:
         wrd_lst.remove(wrd)
 
+# then I want to iterate through each word and make it an acronym with upper
+acro = ""
+for word in wrd_lst:
+    acro += word[0].upper()
+# 3
+stopwords = ['to', 'a', 'for', 'by', 'an', 'am', 'the', 'so', 'it', 'and', 'The']
+sent = "The water earth and air are vital"
+# first I need to filter out the words in the stopwords from the string
+wrd_lst = sent.split()
+for wrd in wrd_lst:
+    if wrd in stopwords:
+        wrd_lst.remove(wrd)
 
 # then I want to iterate through each word and make it an acronym with upper
-acro=""
+acro = ""
 for word in wrd_lst:
-    acro+=word[0].upper()
+    acronym = word[0:2] + '. '
+    acro = acro + acronym.upper()
+acro = acro[:-2]
+
+# 4
+
+p_phrase = "was it a car or a cat I saw"
+# I need to loop through the phrase and add each character to the place before it
+r_phrase = ""
+for c in p_phrase:
+    r_phrase = c + r_phrase
+
+# r_phrase=''.join()
+# print(r_phrase)
+print(r_phrase)
