@@ -44,4 +44,13 @@ for c in p_phrase:
 
 # r_phrase=''.join()
 # print(r_phrase)
-print(r_phrase)
+# 5
+inventory = ["shoes, 12, 29.99", "shirts, 20, 9.99", "sweatpants, 25, 15.00", "scarves, 13, 7.75"]
+# for elem in range(len(inventory)):
+#     for i in range(3):############################################################################################################################################################################
+#         inventory[i]=
+# inventory[1]="The store has "+inventory[1]
+inventory_str=', '.join(inventory)
+inventory_lst=inventory_str.split(', ')
+for i in range(0,len(inventory_lst)-1,3):
+    print("The store has {} {}, each for {} USD.".format(inventory_lst[i+1],inventory_lst[i],inventory_lst[i+2]))
