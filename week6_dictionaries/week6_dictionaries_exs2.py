@@ -69,10 +69,14 @@ sentence = "ThE MightY HoRde EntEreD The cAstLe HunTing ThE kING'S hEAD"#(input(
 sentence=sentence.lower()
 word_dic = {}
 for c in sentence:
-    if c in alphabet and c not in word_dic:
+    if c in alphabet :
+        if c  in word_dic:
+        #c='w' word_dic['w']=1
+            word_dic[c] += 1
+        else:
+
         # c="w" word_dic['w']=0
-        word_dic[c] = 0
-    #c='w' word_dic['w']=1
-        word_dic[c] += 1
+            word_dic[c] = 1
+
 for k,v in sorted(word_dic.items()):
     print(k,v)
