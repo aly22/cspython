@@ -26,8 +26,8 @@ with open(path,"r",encoding="utf-8") as file:
     for idx in range(0,len(lines)-1,2):
         eng2pirate[lines[idx]]=lines[idx+1]
 print("eng2pirate =",eng2pirate)
-stri=input("Enter a sentence and I will try to translate it into pirate: ")
-
+# stri=input("Enter a sentence and I will try to translate it into pirate: ")
+stri="the "
 inpt_lst=stri.split()
 pirate=''
 for word in inpt_lst:
@@ -39,3 +39,23 @@ for word in inpt_lst:
 pirate=pirate[:-1]
 newpirate=pirate+'.'
 print(newpirate)
+
+#3
+
+with open('scarlet3.txt', 'r') as f:
+    words=[]
+    for row in f:
+        words.append(row.strip().split())
+    word_dic={}
+    for lst in words:
+        for word in lst:
+            if len(word)==7:
+                if word not in word_dic:
+                    word_dic[word]=0
+                word_dic[word]+=1
+    most_used_7_letter=list(word_dic.keys())[0]
+    for k in word_dic:
+        if word_dic[k]>word_dic[most_used_7_letter]:
+            if len(k)==7:
+                most_used_7_letter=k
+    print("The most used 7 letter word was: {} with {} usages".format(most_used_7_letter,word_dic[most_used_7_letter]))
