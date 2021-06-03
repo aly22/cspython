@@ -42,7 +42,7 @@ def remove_letter(theLetter, theString):
     return newstr
 
 remove_letter("a",'banana')
-
+# 6
 def myindex(lst,itm):
     count=0
     for item in lst:
@@ -67,11 +67,31 @@ def myreverse(lst):
     return lst[::-1]
 
 def myinsert(lst,position,itm):
-    lst[position]=lst[position]+[itm]
+    lst[position]=lst[position]+itm
     return lst
 
 
 print(myinsert([1,2,3,4,5,6,5,5],1,2))
-
+# 7
 def replace(s, old, new):
+   st=s.split(old)
+   st1=new.join(st)
+   return st1
+
+print("string".split("in"))
+
+# 8
+import random
+def randmax():
+    lst=[]
+    for _ in range(100):
+        lst.append(random.randint(0,1000))
+    max_val=0
+    for i in range(len(lst)):
+        if lst[i]>max_val:
+            max_val=lst[i]
+    return max_val
+print(randmax())
+
+def sum_of_squares(lst):
     
