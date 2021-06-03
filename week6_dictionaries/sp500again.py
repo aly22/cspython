@@ -9,6 +9,7 @@ with open("../week5_csv_txt_files/SP500.txt","r") as file:
     for row in file.readlines()[1:]:
         lines=row.strip().split(',')
         #i need to extract the information found in the year given
+        #this method works for almost any date if not sh** happens
         if (int(''.join(lines).split('/')[0])>5 and int("".join(lines).split('/')[2][0:4])==2016) or (int(''.join(lines).split('/')[0])<6 and int("".join(lines).split('/')[2][0:4])==2017):
             total_SP+=float(lines[1])
             mean_SP=total_SP/12
