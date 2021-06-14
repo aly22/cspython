@@ -26,3 +26,8 @@ print(compri)
 compri = [name['name'] for name in tester['info'] if
           name['class standing'] == "Senior"]
 print(compri)
+
+percent_rain = [94.3, 45, 100, 78, 16, 5.3, 79, 86]
+
+resps=["Bring an umbrella." if perc>90 else "Good for the flowers?" if  perc>80 else "Watch out for clouds!" if perc>50 else "Nice day!" for perc in percent_rain]
+print(resps)
