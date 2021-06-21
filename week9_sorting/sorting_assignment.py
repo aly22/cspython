@@ -54,6 +54,7 @@ winners = ['Alice Munro', 'Alvin E. Roth', 'Kazuo Ishiguro', 'Malala Yousafzai',
 
 
 def sorting(lst):
+    print(lst[lst.rfind(' ')+1])
     return lst[lst.rfind(" ") + 1]
 
 
