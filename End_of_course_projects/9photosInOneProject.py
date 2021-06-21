@@ -2,7 +2,7 @@ from PIL import Image, ImageFilter, ImageFont, ImageDraw
 
 # from IPython.display import display
 
-# And lets load the image we were working, and we can just convert it to RGB inline
+
 file = r"F:\pythonalapok\pythonka\cspython\End_of_course_projects\msi_recruitment.gif"
 image = Image.open(file).convert('RGBA')
 
@@ -12,22 +12,23 @@ def pixel_getter(image):
     font = ImageFont.truetype(
         r"F:\pythonalapok\pythonka\cspython\End_of_course_projects\fanwood-webfont.ttf",
         50)
-
+    k = 0
     for i in range(3):
 
         cnt = 0.1
         for j in range(3):
+
             newim2 = Image.new(image.mode, image.size)
             draw = ImageDraw.Draw(newim2)
-            if i==0:
-                draw.text((15, 400), "channel {} intensity {}".format(cnt, i),
-                      fill=(int(255*cnt), 255, 255), font=font)
-            elif i==1:
-                draw.text((15, 400), "channel {} intensity {}".format(cnt, i),
-                          fill=(255, int(255*cnt), 255), font=font)
+            if i == 0:
+                draw.text((15, 400), "channel {} intensity {}".format(k, cnt),
+                          fill=(int(255 * cnt), 255, 255), font=font)
+            elif i == 1:
+                draw.text((15, 400), "channel {} intensity {}".format(k, cnt),
+                          fill=(255, int(255 * cnt), 255), font=font)
             else:
-                draw.text((15, 400), "channel {} intensity {}".format(cnt, i),
-                          fill=(255, 255, int(255*cnt)), font=font)
+                draw.text((15, 400), "channel {} intensity {}".format(k, cnt),
+                          fill=(255, 255, int(255 * cnt)), font=font)
 
             newim = image.filter(ImageFilter.BoxBlur(0))
             for x in range(image.width):
@@ -46,6 +47,7 @@ def pixel_getter(image):
             blended_img = Image.composite(newim2, newim, newim2)
             cnt += 0.4
             images.append(blended_img)
+        k += 1
     return (images)
 
 
